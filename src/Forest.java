@@ -1,19 +1,19 @@
-
 import java.io.*;
 import java.util.ArrayList;
-
+//=====================================================================================================================
 public class Forest {
-
+//---------------------------------------------------------------------------------------------------------------------
     // Variables
     private String name; // The name of the forest
     private ArrayList<Tree> trees; // The list of trees in the forest
 
-
+//---------------------------------------------------------------------------------------------------------------------
     public Forest(String name) {
         this.name = name;
         this.trees = new ArrayList<>();
 
     }// End of Forest constructor
+//---------------------------------------------------------------------------------------------------------------------
     public boolean loadForest(String csvFilePath) {
 
         // Try-catch block that tries to read the CSV file
@@ -48,7 +48,7 @@ public class Forest {
         }// End of try-catch block
 
     }// End of loadForest method
-
+//---------------------------------------------------------------------------------------------------------------------
     public boolean loadForestFromDB(String dbfileName) {
 
         // Try block that tries to read the db file
@@ -63,7 +63,7 @@ public class Forest {
         }// End of try-catch block
 
     }// End of loadForestFromDB method
-
+//---------------------------------------------------------------------------------------------------------------------
     private Tree.Species convertToSpeciesEnum(String speciesString) {
 
         // Converts Strings to Enums
@@ -76,7 +76,7 @@ public class Forest {
         return null; // If the species string does not match any enum constant
 
     }// End of convertToSpeciesEnum method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void printForest() {
         System.out.println("Forest name: " + name);
 
@@ -87,14 +87,14 @@ public class Forest {
         System.out.println("There are " + trees.size() + " trees, with an average height of " + calculateAverageHeight());
 
     }// End of printForest method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void addRandomTree() {
 
         Tree tree = Tree.generateRandomTree();
         trees.add(tree);
 
     }// End of addRandomTree method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void cutDownTree(int index) {
 
         // Make sure tree number is valid
@@ -106,7 +106,7 @@ public class Forest {
         }
 
     }// End of cutDownTree method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void simulateYear() {
 
         for (Tree tree : trees) {
@@ -115,7 +115,7 @@ public class Forest {
 
 
     }// End of simulateYear method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void reapForest(double height) {
 
         int index;
@@ -135,7 +135,7 @@ public class Forest {
         }// End of for loop
 
     }// End of reapForest method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void saveForest() {
 
         // Try block that tries to write the current forest to a db file
@@ -150,8 +150,7 @@ public class Forest {
         }// End of try-catch block
 
     }// End of saveForest method
-
-
+//---------------------------------------------------------------------------------------------------------------------
     private double calculateAverageHeight() {
 
         // Get total height
