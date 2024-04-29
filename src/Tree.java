@@ -1,8 +1,8 @@
 import java.io.Serializable;
 import java.util.Random;
-
+//=====================================================================================================================
 public class Tree implements Serializable {
-
+//---------------------------------------------------------------------------------------------------------------------
     // Constants
     private static final int MINIMUM_YEAR_PLANTED = 2000;
     private static final int MAXIMUM_YEAR_PLANTED = 25;
@@ -25,7 +25,7 @@ public class Tree implements Serializable {
         this.growthRate = growthRate;
 
     }// End of Tree constructor
-
+//---------------------------------------------------------------------------------------------------------------------
     public static Tree generateRandomTree() {
         Random random = new Random();
         Species[] speciesArray = Species.values();
@@ -38,12 +38,12 @@ public class Tree implements Serializable {
         return new Tree(species, yearPlanted, height, growthRate);
 
     }// End of generateRandomTree method
-
+//---------------------------------------------------------------------------------------------------------------------
     public void simulateYear() {
         height *= 1 + growthRate / 100;
 
     }// End of simulateYear method
-
+//---------------------------------------------------------------------------------------------------------------------
     public double getHeight() {
         return height;
 
